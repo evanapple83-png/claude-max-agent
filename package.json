@@ -1,0 +1,32 @@
+{
+  "name": "claude-max-agent",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "description": "A self-hosted Telegram agent that runs Claude Code (Agent SDK) on your own Claude Max/Pro subscription. Plus an OpenAI-compatible HTTP API, a terminal UI, a web console, SQLite memory, multi-channel adapters, sandboxing, browser automation, and a skills system.",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts",
+    "tui": "tsx src/tui/index.ts",
+    "agent": "tsx src/cli/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.158",
+    "discord.js": "^14.26.4",
+    "dotenv": "^16.4.7",
+    "grammy": "^1.43.0",
+    "node-cron": "^4.2.1",
+    "playwright-core": "^1.49.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/node-cron": "^3.0.11",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,17 @@
+# Secrets — NEVER commit these
+.env
+.env.*
+!.env.example
+
+# Local agent state (SQLite memory, runtime data)
+.data/
+
+# Logs
+*.log
+
+# Build output / deps
+node_modules/
+dist/
+
+# OS junk
+.DS_Store
