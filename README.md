@@ -85,7 +85,7 @@ Message your bot on Telegram, or just `npm run tui`. Done. 🎉
 - **Sandboxing** — the agent's own shell commands can run `local` (default, = your machine), `docker` (hardened ephemeral container), `ssh` (remote host), or `modal` / `daytona` (serverless). Set `HERMES_SANDBOX`.
 - **Browser automation** — headless browser via `playwright-core` using your installed Chrome (no 150 MB download): `browse(url)`, full-page screenshots, and an interactive session for click/fill/extract.
 - **Computer use** — desktop screenshots (macOS `screencapture`). Mouse/keyboard control is **off by default** and gated behind `HERMES_COMPUTER_USE=1` + `cliclick`.
-- **Skills** — agentskills.io-compatible `SKILL.md` capabilities. Discover, create (the agent can author its own), and install from a URL or `gh:owner/repo`. Invoke from the TUI with `/<skill-name>`.
+- **Skills** — agentskills.io-compatible `SKILL.md` capabilities. **Ships with 12 generic skills** (`deep-research`, `summarize`, `code-review`, `debug`, `write-email`, `proofread`, `explain-code`, `commit-message`, `extract-data`, `refactor`, `meeting-notes`, `plan-task` — see [`skills/`](skills/)). Discover more, create your own (the agent can author them), or install from a URL / `gh:owner/repo`. Invoke from the TUI with `/<skill-name>`.
 - **Scheduler** — register cron jobs (`registerJob`) that run unattended and are visible/triggerable via the HTTP API.
 
 Each subsystem is additive and fail-safe: nothing breaks the agent if a subsystem can't initialize.

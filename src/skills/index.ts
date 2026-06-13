@@ -28,12 +28,13 @@ export interface Skill {
   path: string;
 }
 
-/** Skills-mappen: env-override → ~/.hermes/skills → project .hermes/skills. */
+/** Skills-mappen: env-override → ~/.hermes/skills → project .hermes/skills → bundled skills/. */
 function skillDirs(): string[] {
   const dirs = [
     process.env.HERMES_SKILLS_DIR,
     join(homedir(), ".hermes", "skills"),
     join(process.cwd(), ".hermes", "skills"),
+    join(process.cwd(), "skills"), // skills bundled with the repo
   ].filter((d): d is string => !!d);
   return [...new Set(dirs)];
 }
@@ -77,6 +78,7 @@ export function listSkills(): Skill[] {
       continue;
     }
     for (const entry of entries) {
+      if (entry.toLowerCase() === "readme.md") continue; // not a skill
       const full = join(dir, entry);
       try {
         const st = statSync(full);
